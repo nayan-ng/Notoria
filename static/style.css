@@ -1,0 +1,93 @@
+body {
+  background: #0f1117;
+  color: #d1d5db;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar {
+  background: #111827 !important;
+}
+
+.navbar-brand, .nav-link {
+  color: #e5e7eb !important;
+}
+
+h1, h2 {
+  color: #f9fafb;
+}
+
+.subtle-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #374151;
+  color: #e5e7eb;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+.subtle-input:focus {
+  background: transparent;
+  box-shadow: none;
+  border-color: #6366f1;
+  color: #fff;
+}
+
+.subtle-input::placeholder {
+  color: #6b7280;
+}
+
+.card {
+  background: #111827;
+  border: none;
+  color: #e5e7eb;
+}
+
+.badge.bg-danger {
+  background-color: #ef4444 !important;
+}
+
+/* Font switcher */
+.font-sans { font-family: 'Segoe UI', sans-serif; }
+.font-serif { font-family: 'Georgia', serif; }
+.font-mono { font-family: 'Courier New', monospace; }
+
+.glass-note {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 35px;
+  padding: 20px 28px;
+  margin-top: 18px;
+  box-shadow: 0 0 35px rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.notes-section {
+  margin-top: 80px;
+  padding: 40px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.notes-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #f3f4f6;
+  letter-spacing: 1px;
+}
+
+.glass-note {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 36px;
+  padding: 24px 32px;
+  margin: 32px 0 50px 0;   /* THIS is the real fix */
+  box-shadow: 0 0 45px rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+
+.glass-note.important {
+  border: 1px solid rgba(239,68,68,0.6);
+  box-shadow: 0 0 35px rgba(239,68,68,0.25);
+}
