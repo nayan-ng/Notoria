@@ -10,6 +10,39 @@
 
 <style>
 
+.glass-box {
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background: rgba(2, 6, 23, 0.75);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+
+.glass-editor {
+  background: transparent;
+  border: none;
+  color: #f1f5f9;
+  font-size: 1.15rem;
+}
+
+.glass-editor::placeholder {
+  color: #94a3b8;
+}
+
+.glass-editor:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.glass-note {
+  padding: 22px 26px;
+  margin-bottom: 26px;
+  min-height: 160px;
+}
+
+
+
 
 body {
   background: radial-gradient(circle at top,#111827,#020617);
@@ -113,8 +146,17 @@ body {
 <h1>Start writing your notes</h1>
 
 <form action="/" method="post">
-  <textarea id="titleBox" name="title" rows="1" class="editor-box mt-3" placeholder="Title"></textarea>
-  <textarea id="descBox" name="desc" rows="3" class="editor-box mt-3" placeholder="Note"></textarea>
+  <div class="glass-box p-3 mt-3">
+  <textarea id="titleBox" name="title" rows="1"
+    class="editor-box glass-editor"
+    placeholder="Title"></textarea>
+</div>
+
+<div class="glass-box p-3 mt-3">
+  <textarea id="descBox" name="desc" rows="3"
+    class="editor-box glass-editor"
+    placeholder="Write your note..."></textarea>
+</div>
 
   <div class="form-check mt-3">
     <input type="checkbox" class="form-check-input" name="important">
@@ -133,18 +175,19 @@ body {
 
   {% for item in newDocs if item.title and item.desc %}
 
-  <div class="glass-note mb-4">
+  <div class="glass-box glass-note">
+
 
     <form action="/update/{{ item.id }}" method="post" class="edit-form">
 
       <input type="text" name="title"
-             class="form-control mb-2"
-             value="{{ item.title }}"
-             readonly>
+ class="form-control glass-editor mb-2"
+ value="{{ item.title }}" readonly>
 
-      <textarea name="desc"
-                class="form-control mb-2"
-                readonly>{{ item.desc }}</textarea>
+<textarea name="desc"
+ class="form-control glass-editor mb-2"
+ readonly>{{ item.desc }}</textarea>
+
 
       <div class="form-check mb-3">
         <input class="form-check-input"
